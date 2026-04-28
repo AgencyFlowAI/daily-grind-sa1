@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const links = document.getElementById('navLinks');
 
   window.addEventListener('scroll', () => {
-    nav.classList.toggle('nav--scrolled', window.scrollY > 50);
+    nav.classList.toggle('nav--scrolled', window.scrollY > 80);
   });
 
   toggle.addEventListener('click', () => {
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15 });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
   fadeEls.forEach(el => observer.observe(el));
 });
